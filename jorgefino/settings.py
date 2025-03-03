@@ -125,9 +125,15 @@ DATABASE_ROUTERS = (
 #     },
 # }
 
-DATABASE = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+DATABASES = {
+    'default': dj_database_url.config(
+        default="postgresql://db_jorge_user:qmNbLoSvGF1Hv1jKUgwZw3nVRxRCNysE@dpg-cv2u96ofnakc738fock0-a.oregon-postgres.render.com/db_jorge",
+        engine="django.db.backends.postgresql"
+    )
 }
+
+# Asegurar que Django Tenants use la configuración correcta
+DATABASES['default']['ENGINE'] = 'django_tenants.postgresql_backend'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
