@@ -186,3 +186,7 @@ TENANT_MODEL = "tenants.Client" # app.Model
 TENANT_DOMAIN_MODEL = "tenants.Domain"  # app.Model
 
 AUTH_USER_MODEL = 'users.user'
+
+
+
+#Comentario
